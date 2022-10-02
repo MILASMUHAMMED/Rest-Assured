@@ -61,13 +61,13 @@ public class Tests_POST {
 	public void test_3_patch() {
 				
 		JSONObject request = new JSONObject();	
-		request.put("name", "TEST");
-		request.put("job", "leader");
+		request.put("job", "pa");
 		
 		System.out.println(request);
 		System.out.println(request.toJSONString());
 		
-		given().header("Content-Type", "application/json")
+		given()
+		.header("Content-Type", "application/json")
 		.contentType(ContentType.JSON)
 		.accept(ContentType.JSON)	
 		.body(request.toJSONString())

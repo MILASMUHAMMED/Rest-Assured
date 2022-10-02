@@ -7,8 +7,12 @@ public class Tests_GET {
 	@Test
 	void test_01() {
 		
-		given().
-			get("https://reqres.in/api/users?page=2")
+		//https://reqres.in/api/users?page=2
+		
+		baseURI = "https://reqres.in/api/";
+		given()
+			.param("page","2")
+			.get("/users")
 			.then()
 			.statusCode(200)
 			.body("data.id[1]", equalTo(8))
